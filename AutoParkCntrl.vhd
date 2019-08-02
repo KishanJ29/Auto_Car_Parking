@@ -17,13 +17,15 @@ end AutoCarPark;
 	architecture behave of AutoCarPark is 
 		signal count : counter;
 begin 		  
-	SLOT_CHECKING: process(rst, clk) --, car_in, Ent_car_type, count, Ext_car_type, car_out)
+	SLOT_CHECKING: process(rst,clk)--  car_in,count, Ent_car_type,  Ext_car_type, car_out)--clk,
 					begin 
 						if(rst= '1')then
 							count <= (others => 0);
 							Status <= FULL;
 						elsif(rising_edge(clk))then
-			---- CAR ENTRY ----
+			-----------
+		--	CAR ENTRY
+	 		-----------
 							if(	car_in )then
 								   case(Ent_car_type)is 									 
 									  	when Admin => 
@@ -32,7 +34,7 @@ begin
 												count(Admin) <= count(Admin) +1;
 											else
 											  Status <= FULL;
-											--  count(Admin) <= 0;				  
+													  
 											end if;
 									  
 										when Staff =>
@@ -41,7 +43,7 @@ begin
 												count(Staff) <= count(Staff) + 1;
 											else
 											  Status <= FULL;
-											--  count(Staff) <= 0;	
+												
 											end if;
 									  
 										when DisAbel =>
@@ -58,7 +60,7 @@ begin
 												 end if;
 											else
 											  Status <= FULL;		
-											--  count(Disabel) <= 0;		
+												
 											end if;
 									 
 									   	when Visitor =>
@@ -72,10 +74,12 @@ begin
 												end if;
 											else
 											  Status <= FULL;	
-											--  count(Visitor) <= 0;
+											
 											end if;
 									 end case;							
-			 ------ CAR EXIT ------
+			-----------
+		--	 CAR EXIT
+	 		-----------
 							elsif(car_out)then
 	    						case(Ext_car_type)is 									 
 									  when Admin => 
@@ -126,6 +130,4 @@ begin
 					 end if;									
 					end process SLOT_CHECKING;
 			end behave;	
-										 	
-				
-			
+		
