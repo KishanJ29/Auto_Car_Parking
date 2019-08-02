@@ -1,4 +1,4 @@
-# Auto_Car_Parking
+# Auto_Car_Parking and AutoMated Car Parking Slot Allocation
 Automated Multilevel Car Parking 
 
 An automated car multi level car parking is made, There are two implementations\n
@@ -16,7 +16,8 @@ An automated car multi level car parking is made, There are two implementations\
         * AutoCarPark.vhd
         * AutoCarPark_tb.vhd
         * Parking Package.pkg
-  #AutoMated Car Parking Slot Allocation
-  An automated solot allocation is presented here, Here as soon as the car enter the car_type is to be entered accepted car types included are Admin, Staff, Disabled, Visitor. The types can be change at Parking_packages file. 
+ 
+ 
+  An automated slot allocation is presented here, Here as soon as the car enter the car_type is to be entered accepted car types included are Admin, Staff, Disabled, Visitor. The types can be change at Parking_packages file. 
    
    Final Working file contains the working code.
